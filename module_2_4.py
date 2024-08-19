@@ -4,7 +4,7 @@ not_primes = []
 is_prime = True
 for i in numbers[1:15]:  # i = 2
     # print(numbers[i])
-    for j in numbers[1:15]:  # j = 1,2,3,4
+    for j in numbers[1:15]:  # j = 2,3,4
         #print(j)
         if j != i and i % j == 0:
             not_primes.append(i)
