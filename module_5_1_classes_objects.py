@@ -5,7 +5,6 @@ class house:
 
 
     def go_to(self, new_floor):
-        global floor_at
         if new_floor > self.number_of_floors or new_floor < 1:
             print("Такого этажа не существует")
         else:
