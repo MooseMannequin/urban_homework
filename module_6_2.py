@@ -22,7 +22,7 @@ class Vehicle:
 
     def print_info(self):
         self.get_model(), self.get_horsepower(), self.get_color()
-        print(f'Владелец: {self.owner}')
+        return f'Владелец: {self.owner}'
 
     def set_color(self, new_color):
         for i in self.__COLOR_VARIANTS:
