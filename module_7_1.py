@@ -12,7 +12,7 @@ class Product:
         return f'{self.name}, {self.weight}, {self.category}'
 
 class Shop:
-    __file_name = 'product.txt'
+    __file_name = 'products.txt'
 
     def add(self, *products):
         # file = open(self.__file_name, 'r+')
