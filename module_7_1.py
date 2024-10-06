@@ -12,18 +12,15 @@ class Product:
         return f'{self.name}, {self.weight}, {self.category}'
 
 class Shop:
-    __file_name = 'products.txt'
+    __file_name = 'product.txt'
 
     def add(self, *products):
-        # file = open(self.__file_name, 'r+')
-        # list_ = file.read()
-        # file.close()
+        get_ = self.get_products()
+        file = open(self.__file_name, 'r+')
+
         for product in products:
-            file = open(self.__file_name, 'r+')
-            list_ = file.read()
-            if product.name not in list_:
+            if product.name not in get_:
                 file.write(f'{product}\n')
-                file.close()
             else:
                 print(f'Продукт {product} уже есть в магазине')
 
@@ -48,5 +45,4 @@ potatoes_red = Product('Potatoes', 33.7, 'Vegetables')
 print(veg_shop.get_products())
 veg_shop.add(potatoes, carrots, potatoes_red)
 print(veg_shop.get_products())
-
 
