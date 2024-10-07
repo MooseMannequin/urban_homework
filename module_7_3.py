@@ -10,19 +10,17 @@ class WordsFinder:
             with (open(name, encoding='utf-8') as file):
                 for line in file:
                     line = line.lower()
-                    new_line = ''
                     for char in line:
                         if char == ',' or char == '.' or char == '=' or char == '!' \
                                 or char == '?' or char == ';' or char == ':' or char == '-':
 
                             char = ' '
 
-                        new_line = new_line + char
+                        full_text = full_text + char
                         # print(char, end='')
 
-                    full_text = full_text + new_line
-                    # print(new_line)
                     self.all_words[file.name] = full_text.split()
+            # print(full_text)
 
         return self.all_words
 
