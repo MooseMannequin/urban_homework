@@ -7,6 +7,7 @@ def personal_sum(numbers):
             result = result + number
         except:
             incorrect_data = incorrect_data + 1
+            print(f'Некорректный тип данных для подсчёта суммы - {number}')
     return result, incorrect_data
 
 
@@ -22,7 +23,8 @@ def calculate_average(numbers):
         except ZeroDivisionError:
             return 0
     except TypeError:
-        return 'В numbers записан некорректный тип данных'
+        print(f'В numbers записан некорректный тип данных')
+        return None
 
 
 print(calculate_average((22, 33)))
