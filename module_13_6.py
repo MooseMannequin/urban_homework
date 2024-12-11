@@ -11,14 +11,13 @@ dp = Dispatcher(bot, storage= MemoryStorage())
 kb = ReplyKeyboardMarkup(resize_keyboard=True)
 button1 = KeyboardButton(text= 'Рассчитать')
 button2 = KeyboardButton(text= 'Информация')
-kb.add(button1)
-kb.add(button2)
+kb.add(button1, button2)
 
 kbi = InlineKeyboardMarkup()
 ibutton1 = InlineKeyboardButton(text= 'Рассчитать норму калорий', callback_data='calories')
 ibutton2 = InlineKeyboardButton(text= 'Формулы расчёта', callback_data='formulas')
-kbi.add(ibutton1)
-kbi.add(ibutton2)
+kbi.add(ibutton1, ibutton2)
+
 
 class UserState(StatesGroup):
     age, growth, weight = State(), State(), State()
