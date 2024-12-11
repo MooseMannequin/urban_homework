@@ -43,8 +43,7 @@ async def send_calories(message, state):
 kb = ReplyKeyboardMarkup(resize_keyboard=True)
 button1 = KeyboardButton(text= 'Рассчитать')
 button2 = KeyboardButton(text= 'Информация')
-kb.add(button1)
-kb.add(button2)
+kb.add(button1, button2)
 
 @dp.message_handler(commands= 'start')
 async def start(message):
