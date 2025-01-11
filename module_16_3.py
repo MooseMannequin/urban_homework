@@ -1,4 +1,5 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Path
+from typing import Annotated
 
 app = FastAPI()
 
@@ -10,7 +11,9 @@ async def get_users() -> dict:
     return users
 
 @app.post('/user/{username}/{age}')
-async def add_user(username: str, age: int) -> str:
+async def add_user(
+        username: Annotated[str, Path(min_length=5, max_length=20, description='Enter username', example='moose')],
+        age: int = Path(ge=1, le=100, description='Enter User ID', example=7)) -> str:
     user_id = str(1 + int(max(users, key=int)))
     users[user_id] = f'Имя: {username}, возраст: {age}'
     return f'User {user_id} is registered'
